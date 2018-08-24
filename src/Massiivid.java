@@ -1,7 +1,7 @@
 public class Massiivid {
     public static void main(String args[]){
         /*int month_days[] =new int[12];
-        month_days[0]=3;
+        month_days[0]=31;
         month_days[1]=28;
         month_days[2]=31;
         month_days[3]=30;
