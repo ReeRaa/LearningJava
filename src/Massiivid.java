@@ -6,7 +6,6 @@ public class Massiivid {
         month_days[2]=31;
         month_days[3]=30;
         month_days[4]=31;
-        month_days[5]=30;
         month_days[6]=31;
         month_days[7]=31;
         month_days[8]=30;
