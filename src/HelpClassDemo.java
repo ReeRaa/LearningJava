@@ -2,19 +2,19 @@ public class HelpClassDemo {
     public static void main(String args[])
         throws java.io.IOException {
             char choice, ignore;
-            Help hlpobj=new Help();
+            Help helpobject=new Help();
 
             for (;;){
                 do{
-                    hlpobj.showMenu();
+                    helpobject.showMenu();
                     choice=(char) System.in.read();
                     do {
                         ignore=(char)System.in.read();
                     } while ( ignore != '\n');
-                } while ( (!hlpobj.isValid((choice))));
+                } while ( !helpobject.isValid(choice));
                 if(choice=='q')break;
                 System.out.println(("\n"));
-                hlpobj.helpOn(choice);
+                helpobject.helpOn(choice);
             }
         }
 
