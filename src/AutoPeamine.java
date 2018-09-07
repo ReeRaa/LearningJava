@@ -4,8 +4,8 @@ import java.util.Scanner;
 public class AutoPeamine {
 
     public static void main(String args[]){
-        Auto sportauto=new Auto();
-        Auto pereauto=new Auto();
+        Auto sportauto=new Auto(3,4,5);
+        Auto pereauto=new Auto(2,7,8);
         ChkNum e= new ChkNum();
         ArvudeVordlemine xy=new ArvudeVordlemine();
 
@@ -17,8 +17,8 @@ public class AutoPeamine {
         int y =sisend.nextInt();
         sportauto.kiirus =y;
 
-        sportauto.kohtadeArv=2;
-        pereauto.kohtadeArv=7;
+       // sportauto.kohtadeArv=2;
+       // pereauto.kohtadeArv=7;
 
         System.out.print("Sisesta pereauto kütuse tarbimine 100 km kohta: ");
         int a= sisend.nextInt();

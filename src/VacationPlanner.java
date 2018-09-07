@@ -1,12 +1,12 @@
 import java.util.Scanner;
 public class VacationPlanner {
     public static void main (String[] args){
-        Welcome();
-        Planning();
+        //Welcome();
+        //Planning();
         TimeDifference();
         Area();
     }
-    public static void Welcome(){
+  /*  public static void Welcome(){
         Scanner input=new Scanner(System.in);
         System.out.println("Welcome to Vacation Planner!");
         System.out.print("What is your name? ");
@@ -32,12 +32,12 @@ public class VacationPlanner {
 
         System.out.println("If you are going to spend "+ planningToSpend+ " EUR that means per day you can spend up to "+((int)(100*(planningToSpend/days)))/100.0+" EUR " );
         System.out.println("Your total budeget in "+currencySymbol+" is "+ ((int)(100*changeRate*planningToSpend))/100.0+ " "+currencySymbol+", which per day is "+ ((int)(100*changeRate*planningToSpend/days))/100.0+ " "+currencySymbol);
-    }
+    }*/
     public static void TimeDifference(){
         Scanner input=new Scanner(System.in);
         System.out.print("What is the time difference, in hours, between your home and your destination? ");
         int timeDifference = input.nextInt();
-        System.out.println("That means that when it is midnight at home it will be "+(((24+timeDifference)%24))+":00 in your travel destination and when it is noon at home it will be " +(12+timeDifference)+":00.");
+        System.out.println("That means that when it is midnight at home it will be "+(((24+timeDifference)%24))+":00 in your travel destination\n and when it is noon at home it will be " +(12+timeDifference)+":00 in your destination.");
         System.out.println("**********");
     }
     public static void Area(){
