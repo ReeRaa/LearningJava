@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class EvenOdd {
     EvenOdd(){}
-    public int readInAnswer (){
+    int readInAnswer (){
         Scanner input = new Scanner(System.in);
         System.out.print("Give your number! ");
         int number =input.nextInt();

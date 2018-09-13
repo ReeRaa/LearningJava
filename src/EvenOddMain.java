@@ -3,5 +3,9 @@ public class EvenOddMain {
         EvenOdd number=new EvenOdd();
         int num = number.readInAnswer();
         number.isEven(num);
+
+        //Run Days in month
+DaysInMonth days=new DaysInMonth();
+days.days(num);
     }
 }
