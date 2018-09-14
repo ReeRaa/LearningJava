@@ -5,7 +5,12 @@ public class EvenOddMain {
         number.isEven(num);
 
         //Run Days in month
-DaysInMonth days=new DaysInMonth();
-days.days(num);
+    DaysInMonth days=new DaysInMonth();
+    days.days(num);
+
+    //Run char reg:
+String word= days.readInAChar();
+days.checkIfMatch(word);
+
     }
 }
