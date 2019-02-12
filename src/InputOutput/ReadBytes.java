@@ -4,7 +4,8 @@ import java.io.*;
 public class ReadBytes {
     public static void main(String[] args)
     throws IOException{
-        
+
+
        byte data[]=new byte[6];
         System.out.println("Enter smthng in max "+data.length+" char!");
         System.in.read(data);
