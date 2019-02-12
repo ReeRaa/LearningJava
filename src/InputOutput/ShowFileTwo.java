@@ -23,7 +23,7 @@ public class ShowFileTwo {
         catch (IOException exc){System.out.println("Can not read from file!");}
         finally {
             try{
-                fin.close();
+                if (fin!=null){fin.close();}
             }catch (IOException exc){System.out.println(exc);}
         }
     }
