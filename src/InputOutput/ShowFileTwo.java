@@ -26,6 +26,5 @@ public class ShowFileTwo {
                 fin.close();
             }catch (IOException exc){System.out.println(exc);}
         }
-
     }
 }
