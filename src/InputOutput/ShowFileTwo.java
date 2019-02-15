@@ -21,6 +21,7 @@ public class ShowFileTwo {
             }while (i!=-1);
         } catch (FileNotFoundException exc){System.out.println("File not found!");}
         catch (IOException exc){System.out.println("Can not read from file!");}
+
         finally {
             try{
                 if (fin!=null){fin.close();}
