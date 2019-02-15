@@ -24,7 +24,7 @@ public class ShowFileTwo {
         finally {
             try{
                 if (fin!=null){fin.close();}
-            }catch (IOException exc){System.out.println(exc);}
+            }catch (IOException exc){System.out.println("Error closing file! "+exc);}
         }
     }
 }
