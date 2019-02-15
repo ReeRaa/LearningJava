@@ -14,6 +14,7 @@ public class CopyFileTwo {
                     fout.write(i);
                 }
             }while (i!=-1);
+
         }catch (IOException exc) {System.out.println("IO error! "+exc);}
     }
 }
