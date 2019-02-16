@@ -18,21 +18,15 @@ public class CompareFiles {
             do {
                 a = fin1.read();
                 b = fin2.read();
-                if (a != -1 || b != -1) {
-                    if (a != b) {
-                        System.out.println("files are different! In first file is written " + (char) a + " and in second file is written " + (char) b);
-                        return;
-                    }
-                    else {
-                        System.out.println("Files are the same!");
-                    }
-                } else {
-                    System.out.println("One file is shorter than other!");
+
+                if (a != b) {
+                    System.out.println("files are different! In first file is written '"+ (char) a + "' and in second file is written '" + (char) b+"'");
                     return;
                 }
-            }while (a!=-1 || b!=-1);{System.out.println("One file is shorter than other!");return;}
+            } while (a != b || a != -1 || b != -1) ;
 
-        } catch (IOException exc) {
+                System.out.println("Files are the same!");
+            }catch (IOException exc) {
             System.out.println("IO error! " + exc);
         }
     }
