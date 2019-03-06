@@ -31,9 +31,15 @@ public class Student {
         Student s1=new Student("Karl",21);
         Student s2=new Student("Pear",20);
         Student s3=new Student("See counter!",20);
+        Student s4=new Student("See counter!",20);
+        Student s5=new Student("See counter!",20);
+        Student s6=new Student("See counter!",20);
 
-        s1.show();
         s2.show();
-        s3.increaseCounter();
+        s2.show();
+        s2.increaseCounter();
+        s2.increaseCounter();
+        s2.increaseCounter();
+        s2.show();
     }
 }
