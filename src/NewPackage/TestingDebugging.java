@@ -11,7 +11,7 @@ public class TestingDebugging {
             }
         }
 
-        //Ülevalt alla
+        //Ylevalt alla
         for (i = 9; i > 0; i--) {
             System.out.println();
             for (k = i; k < 9; k++) {

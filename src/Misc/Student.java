@@ -3,7 +3,7 @@ package Misc;
 public class Student {
     String name;
     int age;
-    static String school="TTÜ";
+    static String school="TTY";
     int counter1=0;
     static int counter2=0;
 

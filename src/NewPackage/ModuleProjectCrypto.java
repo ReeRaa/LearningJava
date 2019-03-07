@@ -42,7 +42,7 @@ public class ModuleProjectCrypto {
         int wordLength=word.length();
         for (int i=0; i<word.length();i++){
             char taht=word.charAt(i);
-            if (taht=='O'||taht=='A'||taht=='E'||taht=='I'||taht=='Ü'||taht=='U'||taht=='Ä'||taht=='Ö'||taht=='Õ'){
+            if (taht=='O'||taht=='A'||taht=='E'||taht=='I'||taht=='u'||taht=='U'||taht=='a'||taht=='o'||taht=='o'){
                 firstPart=word.substring(0,i);
                 secondPart=word.substring(i,wordLength);
                 word=firstPart+"OB"+secondPart;
