@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Search {
 
-    static String path = "C:\\Users\\reelyka.laheb\\IdeaProjects\\LearningJava\\LoeFailist.txt";
+    static String path = "C:\\Users\\reelyka.laheb\\IdeaProjects\\LearningJava\\LoeFailistMinuFail.txt";
 
     public String findLongestWord() throws IOException {
         String longestWord="";
@@ -26,25 +26,27 @@ public class Search {
 
         while (scanner.hasNext()) {
             current = scanner.next();
-            if (current.length() >= longestWord.length()) {
+            counter=countOccurrences(current);
+
+            if (counter>=3||current.length() >= longestWord.length()) {
                 longestWord = current;
                 //count Occurrences of this word
-                counter=countOccurrences(longestWord);
-                if (counter >=3) {
+                if (counter <3||candidates.contains(current)){}
+                else{
                     candidates.add(current);
-                    System.out.println("We have a winner! The longest word that was counted at least 3 times is " + longestWord + ". It was counted " + counter + " times! It's length is: "+longestWord.length());
+                    System.out.println("We have a candidate! Word, that was counted at least 3 times is " + longestWord + ". It was counted " + counter + " times! It's length is: "+longestWord.length());
                 }
             }
         }
 
-//            System.out.println("longest word is " + longestWord);
-//            System.out.println("counter is " + counter);
+
         System.out.println("Here are candidates!");
             for (String word:candidates){System.out.println(word);}
 
         //Find longest of candidates
 
-
+//            System.out.println("longest word is " + longestWord);
+//            System.out.println("counter is " + counter);
         return current;
     }
 
