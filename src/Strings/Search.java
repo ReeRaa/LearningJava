@@ -44,13 +44,16 @@ public class Search {
                 if (current.length() == i) {
                     counter = countOccurrences(current);
                     if (counter > 3) {
-                        System.out.println("Longest word is found with more than 3 occurrences: " + current);
+                        System.out.println("Longest word was found with more than 3 occurrences: " + current);
                         System.out.println(" Counter value: " + counter);
                         searchable = current;
-                    } else {
-                        System.out.println("Not as many occurences as needed! Word: " + current + " counter: " + counter);
+                        break;
                     }
+                    //else {
+                   //     System.out.println("Not as many occurrences as needed! Word: " + current + " counter: " + counter); }
                 }
+                break;
+
             }
         }
         System.out.println("output: "+searchable);

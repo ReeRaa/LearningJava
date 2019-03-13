@@ -1,5 +1,9 @@
 package Strings;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import static java.util.Calendar.*;
+
 public class Palindrome {
     public static void main(String[] args) {
         String initialString="Tere tere vana kere";
@@ -43,6 +47,7 @@ public class Palindrome {
 
         System.out.println(String.format("%3$d%2$s%1$d",32," Hello ",45));
 
+        //exercise String formatting
         int age=10;
         int myAge=3*age;
         String fname="Mia";
@@ -73,7 +78,34 @@ public class Palindrome {
         System.out.print(String.format("%-15s|",lname));
         System.out.println();
         System.out.println();
-        System.out.print(String.format("%-15.2s|",lname));
+        System.out.println(String.format("Text goes here |%2$-15.2s|  %1$s| and continues here ",lname,fname));
+
+        int num=34;
+        String s11=String.format("The number is %05d",num);
+        System.out.println(s11);
+
+        String s20="Reelyka";
+        String s21="reelyka";
+        String s23="Reelyka";
+        String s22=new String("Reelyka");
+        System.out.println(s20.equals(s21));
+        System.out.println(s20.equalsIgnoreCase(s21));
+        System.out.println(s20==s23);
+        System.out.println(s20==s22);
+
+        int k=5;
+        while(k--!=1){
+            System.out.println(k);
+        }
+        String s30="tere";
+        String s31="tere";
+        String s32="term";
+        if (s30.compareTo(s1)==0) {
+            System.out.println("same!");
+        } else if (s30.compareTo(s32)==0){
+            System.out.println("same!");
+        }
+        System.out.println(s30.compareTo(s32));
 
     }
 }
