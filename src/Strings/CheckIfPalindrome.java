@@ -12,5 +12,12 @@ public class CheckIfPalindrome {
         } else {
             System.out.println("This word is not a palindrome!");
         }
+
+        StringBuilder sb=new StringBuilder(str);
+        sb.reverse();
+        String rev=sb.toString();
+        if(str.equalsIgnoreCase(rev)){
+            System.out.println("Palindrome!");
+        }else{System.out.println("Not palindrome!");}
     }
 }
