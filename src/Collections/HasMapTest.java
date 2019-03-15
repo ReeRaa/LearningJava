@@ -1,7 +1,7 @@
 package Collections;
 import java.util.HashMap;
 
-public class HasSetTest {
+public class HasMapTest {
     public static void main(String[] args) {
         HashMap<String, String> capitalCitites = new HashMap<String, String>();
         HashMap<Integer, String> capitalNumbers = new HashMap<Integer, String>();
