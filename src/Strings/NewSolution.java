@@ -4,7 +4,7 @@ import java.util.*;
 
 public class NewSolution {
 
-    static File file = new File("C:\\Users\\reelyka.laheb\\Desktop\\Java\\VabaTekst.txt");
+    static File file = new File("C:\\Users\\reelyka.laheb\\Desktop\\Java\\RaamatuTekst.txt");
     static int maxLength;
     static String theWord="";
     final String trialWord="happy";
@@ -34,33 +34,28 @@ public class NewSolution {
       public String searchingLongestWord(int strLength) throws IOException {
           NewSolution ns = new NewSolution();
           String readWord="";
-          int wordLength;
           int count = 0;
-          System.out.println("Initial i value is "+strLength);
           for (int i = strLength; i > 0 && theWord==""; i--) {
-             //System.out.println("i väärtus selles tsüklis "+i);
               int nr=0;
               Scanner sc = new Scanner(file);
+              sc.useDelimiter("[^a-zA-Z]+");
 
-              while (sc.hasNextLine() && theWord=="") {
+              while (sc.hasNext() && theWord=="") {
               readWord = sc.next();
-              wordLength=readWord.length();
-              System.out.println(readWord+" "+wordLength);
 
                   if (readWord.length() == i) {
-                      System.out.println("WORD in IF is: "+readWord);
+                      System.out.print("WORD in IF is: \""+readWord);
                       count = ns.countOccurrences(readWord);
+                      System.out.println("\" with count of: "+count);
                       if (count >= occurrences) {
                           theWord=readWord;
-                          System.out.println("Longest readWord with at least "+occurrences+" occurrences is " + theWord + " with " + count + " occurrences.");
+                          System.out.println("Longest readWord with at least "+occurrences+" occurrences is \"" + theWord + "\" with " + count + " occurrences.");
                           break;
-
                       }
                   }
               }
- //             System.out.println("i value outside while cycle at the end is "+i);
+              sc.close(); //close the scanner
           }
-   //       System.out.println("The Word is: "+theWord);
           return theWord;
       }
 
@@ -68,24 +63,20 @@ public class NewSolution {
         public int countOccurrences(String str)throws IOException{
             int counter = 0;
             Scanner sc=new Scanner(file);
+            sc.useDelimiter("[^a-zA-Z]+");
 
             while(sc.hasNext()){
                 if (sc.next().equalsIgnoreCase(str)){
                     counter++;
                 }
             }
-            System.out.println("Word: "+str+"; counts: "+counter);
             return counter;
         }
 
     public static void main(String[] args) throws IOException {
         NewSolution ns=new NewSolution();
-        //ns.countOccurrences("happy");
-
         int maximumLength= ns.longestWordLength();
         String tWord=ns.searchingLongestWord(maximumLength);
-        System.out.println("The not case-sensitive word with at least "+ occurrences+ " occurrences is: "+tWord);
-
-
+        System.out.println("The non case-sensitive word with at least "+ occurrences+ " occurrences is: "+tWord.toUpperCase());
     }
 }
