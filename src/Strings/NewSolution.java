@@ -4,68 +4,97 @@ import java.util.*;
 
 public class NewSolution {
 
-    static String path = "C:\\Users\\reelyka.laheb\\IdeaProjects\\LearningJava\\LoeFailist.txt";
+    static File file = new File("C:\\Users\\reelyka.laheb\\Desktop\\Java\\VabaTekst.txt");
+    static int maxLength;
+    static String theWord="";
+    final String trialWord="happy";
+    final int occurrences=3;
 
-    public void findLongestWord() throws IOException {
-       // final Map<String, Integer> longestWordMap = new LinkedHashMap<>();
+    public int longestWordLength() throws IOException {
 
         String longestWord = "";
-        String current = "";
-        Scanner scanner = new Scanner(new File(path));
+        String currentWord = "";
+        Scanner scanner = new Scanner(file);
         scanner.useDelimiter("[^A-Za-z]+");
-        int counter;
         int maxLength = 0;
 
-        List<String> words = new ArrayList<>();
         while (scanner.hasNext()) {
-            current = scanner.next();
-            words.add(current);
-            if (current.length() > longestWord.length()) {
-                longestWord = current;
-                maxLength = longestWord.length();
+            currentWord = scanner.next();
+            if (currentWord.length() > longestWord.length()) {
+                longestWord = currentWord;
             }
         }
-        System.out.println("Max length is:" + maxLength); //how long is the longest word in file
-        //with countdown find the longest word with min 3 occurrences
-        longestWord = startFromLongest(words, longestWord.length());
-        System.out.println(String.format("FINAL RESULT: length = %d, word = %s", longestWord.length(), longestWord));
-        System.out.println("Longest word with min 3 occurrences is: " + longestWord);
+        maxLength = longestWord.length();
+
+        System.out.println("Max length for longest word can be: " + maxLength); //how long can be the longest word in file
+        return maxLength;
     }
 
-    //start to search beginning from longest
-    public String startFromLongest(List<String> words, int maxLength) throws IOException {
-        String searchable = "";
-        for (int i = maxLength; i > 0; i--) {
-            for (String current : words) {
-                if (current.length() == i) {
-                    if (countOccurrences(words, current) > 3) {
-                       // break;
-                    } else {
-                        return current;
-                    }
+         //search the word,  with at least 3 occurrences beginning countdown from max length
+      public String searchingLongestWord(int strLength) throws IOException {
+          NewSolution ns = new NewSolution();
+          String readWord="";
+          int wordLength;
+          int count = 0;
+          System.out.println("Initial i value is "+strLength);
+          for (int i = strLength; i > 0; i--) {
+              System.out.println("i väärtus selles tsüklis "+i);
+              int nr=0;
+              Scanner sc = new Scanner(file);
+
+              while (sc.hasNextLine()) {
+           //   System.out.println("while cycle beginning count: "+nr++);
+              readWord = sc.next();
+              wordLength=readWord.length();
+              System.out.println(readWord+" "+wordLength);
+              //get readWord length
+
+                  if (readWord.length() == i) {
+
+                      System.out.println("WORD in IF is: "+readWord);
+                      count = ns.countOccurrences(readWord);
+                      if (count >= occurrences) {
+                          theWord=readWord;
+                          System.out.println("Longest readWord with at least "+occurrences+" occurrences is " + theWord + " with " + count + " occurrences.");
+                          break;
+                      }
+                  }else{
+                     // System.out.println("else cycle, readWord is "+readWord);
+                  }
+                  System.out.println("i value at the end is "+i);
+                 // break;
+
+              }
+              System.out.println("i value outside while cycle at the end is "+i);
+
+             // break;
+          }
+          System.out.println("The Word is: "+theWord);
+          return theWord;
+      }
+
+        //The counter
+        public int countOccurrences(String str)throws IOException{
+            int counter = 0;
+            Scanner sc=new Scanner(file);
+
+            while(sc.hasNext()){
+                if (sc.next().equalsIgnoreCase(str)){
+                    counter++;
                 }
             }
+            System.out.println("Word: "+str+"; counts: "+counter);
+            return counter;
         }
-
-        System.out.println("output: " + searchable);
-        return searchable;
-    }
-
-    //The counter
-    public int countOccurrences(List<String> words, String word) throws IOException {
-        int counter = 0;
-
-        for (String current : words) {
-            if (current.contentEquals(word)) {
-                counter++;
-            }
-        }
-        return counter;
-    }
 
     public static void main(String[] args) throws IOException {
-        Search longestWord = new Search();
-        longestWord.findLongestWord();
+        NewSolution ns=new NewSolution();
+        //ns.countOccurrences("happy");
+
+        int maximumLength= ns.longestWordLength();
+        String tWord=ns.searchingLongestWord(maximumLength);
+        //System.out.println("The Word is: "+tWord);
+
 
     }
 }

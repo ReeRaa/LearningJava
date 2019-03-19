@@ -7,9 +7,9 @@ public class FindLongestWord {
     public static void main(String[] args) throws IOException {
         List <String> lineList=new ArrayList<String>();
 
-        String path="C:\\Users\\reelyka.laheb\\IdeaProjects\\LearningJava\\LoeFailist.txt";
+        File file=new File("C:\\Users\\reelyka.laheb\\Desktop\\Java\\VabaTekst.txt");
 
-        FileReader fr = new FileReader(path);
+        FileReader fr = new FileReader(file);
         BufferedReader br = new BufferedReader(fr);
         String allText, line;
 
