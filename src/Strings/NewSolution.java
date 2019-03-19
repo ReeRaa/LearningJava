@@ -8,7 +8,7 @@ public class NewSolution {
     static int maxLength;
     static String theWord="";
     final String trialWord="happy";
-    final int occurrences=3;
+    static final int occurrences=3;
 
     public int longestWordLength() throws IOException {
 
@@ -37,39 +37,30 @@ public class NewSolution {
           int wordLength;
           int count = 0;
           System.out.println("Initial i value is "+strLength);
-          for (int i = strLength; i > 0; i--) {
-              System.out.println("i väärtus selles tsüklis "+i);
+          for (int i = strLength; i > 0 && theWord==""; i--) {
+             //System.out.println("i väärtus selles tsüklis "+i);
               int nr=0;
               Scanner sc = new Scanner(file);
 
-              while (sc.hasNextLine()) {
-           //   System.out.println("while cycle beginning count: "+nr++);
+              while (sc.hasNextLine() && theWord=="") {
               readWord = sc.next();
               wordLength=readWord.length();
               System.out.println(readWord+" "+wordLength);
-              //get readWord length
 
                   if (readWord.length() == i) {
-
                       System.out.println("WORD in IF is: "+readWord);
                       count = ns.countOccurrences(readWord);
                       if (count >= occurrences) {
                           theWord=readWord;
                           System.out.println("Longest readWord with at least "+occurrences+" occurrences is " + theWord + " with " + count + " occurrences.");
                           break;
+
                       }
-                  }else{
-                     // System.out.println("else cycle, readWord is "+readWord);
                   }
-                  System.out.println("i value at the end is "+i);
-                 // break;
-
               }
-              System.out.println("i value outside while cycle at the end is "+i);
-
-             // break;
+ //             System.out.println("i value outside while cycle at the end is "+i);
           }
-          System.out.println("The Word is: "+theWord);
+   //       System.out.println("The Word is: "+theWord);
           return theWord;
       }
 
@@ -93,7 +84,7 @@ public class NewSolution {
 
         int maximumLength= ns.longestWordLength();
         String tWord=ns.searchingLongestWord(maximumLength);
-        //System.out.println("The Word is: "+tWord);
+        System.out.println("The not case-sensitive word with at least "+ occurrences+ " occurrences is: "+tWord);
 
 
     }
