@@ -23,7 +23,6 @@ public class UseThreads {
             }
         }
         System.out.println("Main thread ending.");
-        System.out.println("Tere!");
-        System.out.println("Ae");
+        System.out.println("Kodu");
     }
 }
