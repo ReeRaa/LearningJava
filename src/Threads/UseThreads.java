@@ -7,11 +7,11 @@ public class UseThreads {
         //first construct MyThread obj
         MyThread mt=new MyThread("Child #1");
 
-        //next, construct a thread from that object
-        Thread newThread=new Thread(mt);
+//        //next, construct a thread from that object
+//        Thread newThread=new Thread(mt);
 
         //finally start execution of the thread
-        newThread.start();
+//        newThread.start();
 
         for (int i=0;i<50;i++){
             System.out.print(".");
@@ -23,6 +23,5 @@ public class UseThreads {
             }
         }
         System.out.println("Main thread ending.");
-        System.out.println("Kodu");
     }
 }
