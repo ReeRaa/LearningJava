@@ -8,8 +8,21 @@ public class Allanimals {
         return array;
     }
 
+    public enum anime{
+    pig(1), donkey(2),bear(3);
+    int price;
+    anime (int s){price=s;}
+    int getPrice(){return price;}
+
+        }
+
 
     public static void main(String[] args) {
+        String s1=anime.bear.name();
+        System.out.println(s1);
+        System.out.println(anime.pig.getPrice());
+
+        System.out.println(anime.values().toString());
 
         //System.out.println(args[0]);
         //System.out.println(args[1]);
@@ -70,5 +83,7 @@ public class Allanimals {
 
     System.out.println(cat.cat2);
     System.out.println(cat.cat1);
+
+
 }
 }
